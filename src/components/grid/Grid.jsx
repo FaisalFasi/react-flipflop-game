@@ -84,22 +84,34 @@ function Grid() {
       });
     });
   };
-
+  const resetGame = () => {
+    window.location.reload(false);
+  };
   return (
-    <div className="grid grid-cols-4 w-80 m-auto mt-20">
-      {boxes.map((box, index) => {
-        return (
-          <Box
-            key={index}
-            id={box.id}
-            isClicked={box.isClicked}
-            value={box.value}
-            imgSrc={box.imgSrc}
-            clickHandler={(id) => clickHandler(box.id, box.value)}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="grid grid-cols-4 w-80 m-auto mt-10">
+        {boxes.map((box, index) => {
+          return (
+            <Box
+              key={index}
+              id={box.id}
+              isClicked={box.isClicked}
+              value={box.value}
+              imgSrc={box.imgSrc}
+              clickHandler={(id) => clickHandler(box.id, box.value)}
+            />
+          );
+        })}
+      </div>
+      <div className="text-center mt-5">
+        <button
+          className="font-semibold p-2 bg-red-500 text-white w-60"
+          onClick={resetGame}
+        >
+          Reset Game
+        </button>
+      </div>
+    </>
   );
 }
 
