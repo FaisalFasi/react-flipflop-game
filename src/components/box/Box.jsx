@@ -1,4 +1,3 @@
-// import "./box.css";
 const Box = (props) => {
   const handleClick = () => {
     props.clickHandler(props.id);
@@ -6,8 +5,6 @@ const Box = (props) => {
 
   return (
     <div>
-      {/* <img src="./img/img-11.jpg" alt="" /> */}
-
       {!props.isClicked ? (
         <div className="w-16 h-16 bg-red-300 m-2" onClick={handleClick}></div>
       ) : (
